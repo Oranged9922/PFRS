@@ -4,6 +4,7 @@
 ## Revision
 
 - 01/12/2021 Created the document, version 0.1.0.
+- 02/12/2021 Edited Functional description, version 0.1.1.
 
 ------
 
@@ -17,6 +18,8 @@ Create standalone C# application using WinForms that works as learning tool for 
 
 User is able to write own script for controlling the robot based on robots implementation and by usage of its properties (motor speeds, reading sensor input data...), as well as add self-made tracks (and possibly own robot implementation ? **to be discussed**). The application will then precalculate the movement on robot using the script and will create timeline that user can interact with afterwards. 
 
+*   Ability to run multiple scripts at once and precalculate multiple scripts at once.
+
 ------
 
 ## User interface
@@ -29,6 +32,8 @@ User is able to write own script for controlling the robot based on robots imple
 
 * The application is written in WinForms app, which implies usage of Windows.
 * .NET 6 installed on the device
+* Multithreaded
+* Ability to interpret (compile?) scripts
 
 ------
 
