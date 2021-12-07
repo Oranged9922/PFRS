@@ -1,9 +1,6 @@
-﻿using Microsoft.CodeAnalysis.Scripting;
-
-namespace Analyzer
+﻿
+namespace PFRS.Analyzer;
+public class ScriptAnalyzer
 {
-    public class ScriptAnalyzer
-    {
 
-    }
 }
