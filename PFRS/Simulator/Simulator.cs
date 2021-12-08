@@ -1,4 +1,4 @@
-﻿using PFRS.Common.SceneRepresentation;
+﻿using PFRS.Simulator.SceneRepresentation;
 
 namespace PFRS.Simulator
 {

@@ -1,5 +1,7 @@
 ﻿namespace PFRS.Common;
-public class RobotCoordinates
+public record struct RobotCoordinates
 {
-
+    public decimal X;
+    public decimal Y;
+    public decimal RotationAngle;
 }
