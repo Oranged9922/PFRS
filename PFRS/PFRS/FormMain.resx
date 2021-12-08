@@ -59,7 +59,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TrackPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Top, Bottom, Left</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TrackPictureBox.Location" type="System.Drawing.Point, System.Drawing">
@@ -69,7 +69,7 @@
     <value>450, 0</value>
   </data>
   <data name="TrackPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 625</value>
+    <value>450, 537</value>
   </data>
   <data name="TrackPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -88,7 +88,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TrackPictureBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="ButtonSimulationSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -100,10 +100,10 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="ButtonSimulationSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1132, 595</value>
+    <value>913, 524</value>
   </data>
   <data name="ButtonSimulationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 42</value>
+    <value>59, 25</value>
   </data>
   <data name="ButtonSimulationSettings.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -121,13 +121,193 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonSimulationSettings.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ButtonLoadScript.Location" type="System.Drawing.Point, System.Drawing">
+    <value>585, 8</value>
+  </data>
+  <data name="ButtonLoadScript.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 25</value>
+  </data>
+  <data name="ButtonLoadScript.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ButtonLoadScript.Text" xml:space="preserve">
+    <value>Load Scripts</value>
+  </data>
+  <data name="&gt;&gt;ButtonLoadScript.Name" xml:space="preserve">
+    <value>ButtonLoadScript</value>
+  </data>
+  <data name="&gt;&gt;ButtonLoadScript.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonLoadScript.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ButtonLoadScript.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>585, 39</value>
+  </data>
+  <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>387, 479</value>
+  </data>
+  <data name="TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TextBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;TextBox.Name" xml:space="preserve">
+    <value>TextBox</value>
+  </data>
+  <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TextBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ButtonSaveScript.Location" type="System.Drawing.Point, System.Drawing">
+    <value>672, 8</value>
+  </data>
+  <data name="ButtonSaveScript.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 25</value>
+  </data>
+  <data name="ButtonSaveScript.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ButtonSaveScript.Text" xml:space="preserve">
+    <value>Save Script</value>
+  </data>
+  <data name="&gt;&gt;ButtonSaveScript.Name" xml:space="preserve">
+    <value>ButtonSaveScript</value>
+  </data>
+  <data name="&gt;&gt;ButtonSaveScript.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonSaveScript.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ButtonSaveScript.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ListBoxScripts.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="ListBoxScripts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 39</value>
+  </data>
+  <data name="ListBoxScripts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 274</value>
+  </data>
+  <data name="ListBoxScripts.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;ListBoxScripts.Name" xml:space="preserve">
+    <value>ListBoxScripts</value>
+  </data>
+  <data name="&gt;&gt;ListBoxScripts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ListBoxScripts.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ListBoxScripts.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ButtonRemoveScript.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 8</value>
+  </data>
+  <data name="ButtonRemoveScript.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 25</value>
+  </data>
+  <data name="ButtonRemoveScript.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ButtonRemoveScript.Text" xml:space="preserve">
+    <value>Remove Script</value>
+  </data>
+  <data name="&gt;&gt;ButtonRemoveScript.Name" xml:space="preserve">
+    <value>ButtonRemoveScript</value>
+  </data>
+  <data name="&gt;&gt;ButtonRemoveScript.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonRemoveScript.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ButtonRemoveScript.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ButtonRunSingleScript.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 319</value>
+  </data>
+  <data name="ButtonRunSingleScript.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 25</value>
+  </data>
+  <data name="ButtonRunSingleScript.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="ButtonRunSingleScript.Text" xml:space="preserve">
+    <value>Simulate Script</value>
+  </data>
+  <data name="&gt;&gt;ButtonRunSingleScript.Name" xml:space="preserve">
+    <value>ButtonRunSingleScript</value>
+  </data>
+  <data name="&gt;&gt;ButtonRunSingleScript.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonRunSingleScript.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ButtonRunSingleScript.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 350</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 25</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Simulate All</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1254, 649</value>
+    <value>984, 561</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 600</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 600</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>PFRS</value>
