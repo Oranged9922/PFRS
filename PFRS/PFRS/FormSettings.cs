@@ -12,6 +12,9 @@ namespace PFRS
 {
     public partial class FormSettings : Form
     {
+
+        public string SelectedTrack { get; internal set; }
+        public int SimTime { get; internal set; }
         internal FormMain fMain;
         public FormSettings(FormMain m)
         {
@@ -20,16 +23,15 @@ namespace PFRS
 
             comboBox1.Text = fMain.SelectedTrack;
             comboBox1.Items.AddRange(fMain.Tracks.Keys.ToArray());
-
+            this.SimTime = fMain.SimTime;
             this.SelectedTrack = comboBox1.Text;
 
         }
 
-        public string SelectedTrack { get; internal set; }
-
         private void ButtonDefault_Click(object sender, EventArgs e)
         {
             fMain.SetDefaults();
+            fMain.SettingsOpen = false;
             this.Close();
         }
 
@@ -41,11 +43,15 @@ namespace PFRS
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             fMain.SetAppliedSettings(this);
+
+            fMain.SettingsOpen = false;
             this.Close();
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
+
+            fMain.SettingsOpen = false;
             this.Close();
         }
     }
