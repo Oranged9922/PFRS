@@ -1,4 +1,5 @@
 namespace PFRS;
+
 internal static class Program
 {
     /// <summary>
