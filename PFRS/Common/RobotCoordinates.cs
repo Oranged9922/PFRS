@@ -1,7 +1,8 @@
-﻿namespace Common;
-public record struct RobotCoordinates
+﻿using Utils.Vector;
+
+namespace Common;
+public struct RobotCoordinates
 {
-    public decimal X;
-    public decimal Y;
-    public decimal RotationAngle;
+    public Vector2 Position;
+    public double RotationAngle;
 }
