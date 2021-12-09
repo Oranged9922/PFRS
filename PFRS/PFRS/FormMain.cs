@@ -19,6 +19,7 @@ namespace PFRS
 		/// Stores Robots that are implemented
 		/// </summary>
 		internal Dictionary<string, IRobot> Robots;
+		internal Dictionary<string, Bitmap> RobotsImages;
 		/// <summary>
 		/// List of scripts that are loaded
 		/// </summary>
@@ -42,11 +43,36 @@ namespace PFRS
 			InitializeComponent();
 			Tracks = LoadTracks();
 			Robots = LoadRobots();
+			RobotsImages = LoadRobotsImages();
 			SetDefaults();
 
 		}
 
-      
+        private Dictionary<string, Bitmap> LoadRobotsImages()
+        {
+			Dictionary<string, Bitmap> result = new()
+			{
+				{ "FiveSensorsRobot", new Bitmap("data\\robots\\FiveSensorsRobot.png") }
+			};
+			DirectoryInfo d = new("data\\robots\\");
+
+			foreach (var item in d.GetFiles())
+			{
+				if (item.Name != "FiveSensorsRobot.png")
+					try
+					{
+						result[item.Name.Split('.')[0]] = new Bitmap("data\\robots\\" + item.Name);
+					}
+					catch
+					{
+						Debug.WriteLine($"Warning!{item.Name} could not be loaded as valid robot image!");
+						continue;
+					}
+			}
+			return result;
+		}
+
+
         /// <summary>
         /// Sets default values used in the 
         /// </summary>
@@ -54,6 +80,7 @@ namespace PFRS
 		{
 			TrackPictureBox.Image = Tracks["default.png"];
 			SelectedTrack = "default.png";
+			SelectedRobot = "FiveSensorsRobot";
 		}
 
 		private Dictionary<string, IRobot> LoadRobots()
@@ -76,7 +103,7 @@ namespace PFRS
 			{
 				{ "default.png", new Bitmap("data\\tracks\\default.png") }
 			};
-			DirectoryInfo d = new DirectoryInfo("data\\tracks\\");
+			DirectoryInfo d = new("data\\tracks\\");
 
 			foreach (var item in d.GetFiles())
 			{
@@ -112,6 +139,7 @@ namespace PFRS
 		internal void SetAppliedSettings(FormSettings f)
         {
 			SelectedTrack = f.SelectedTrack;
+			SelectedRobot = f.SelectedRobot;
 			TrackPictureBox.Image = Tracks[SelectedTrack];
         }
 
@@ -124,30 +152,26 @@ namespace PFRS
         {
 			string filePath;
 			string fileContent;
-			using (OpenFileDialog openFileDialog = new()) {
+            using OpenFileDialog openFileDialog = new();
+            openFileDialog.InitialDirectory = "data\\scripts\\";
 
-				openFileDialog.InitialDirectory = "data\\scripts\\";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                filePath = openFileDialog.FileName;
 
-				if (openFileDialog.ShowDialog() == DialogResult.OK)
-				{
-					//Get the path of specified file
-					filePath = openFileDialog.FileName;
+                //Read the contents of the file into a stream
+                var fileStream = openFileDialog.OpenFile();
 
-					//Read the contents of the file into a stream
-					var fileStream = openFileDialog.OpenFile();
-
-					using (StreamReader reader = new StreamReader(fileStream))
-					{
-						fileContent = reader.ReadToEnd();
-						fileContent = fileContent.ReplaceLineEndings("\n");
-						scripts.Add(new(scripts.Count, filePath, fileContent));
-						// save script to Scripts
-						ListBoxScripts.BeginUpdate();
-						ListBoxScripts.Items.Add(scripts[scripts.Count-1].Name);
-						ListBoxScripts.EndUpdate();
-					}
-				}
-			}
+                using StreamReader reader = new(fileStream);
+                fileContent = reader.ReadToEnd();
+                fileContent = fileContent.ReplaceLineEndings("\n");
+                scripts.Add(new(scripts.Count, filePath, fileContent));
+                // save script to Scripts
+                ListBoxScripts.BeginUpdate();
+                ListBoxScripts.Items.Add(scripts[scripts.Count - 1].Name);
+                ListBoxScripts.EndUpdate();
+            }
         }
 		/// <summary>
 		/// Changes selected script and sets it for display
@@ -267,31 +291,44 @@ namespace PFRS
 			SelectedScript = 0;
         }
 
-        private void ButtonRunSingleScript_Click(object sender, EventArgs e)
-        {
-            ScriptAnalyzer scriptAnalyzer = new Analyzer.ScriptAnalyzer();
-			var result = scriptAnalyzer.CompileScript(GetScript(SelectedScript).Contents);
-			if(result is Exception ex)
-            {
+		// broken
+		private void ButtonRunSingleScript_Click(object sender, EventArgs e)
+		{
+			ScriptAnalyzer scriptAnalyzer = new();
+			List<Simulator.SimulationFrame> simulationResult;
+			var result = scriptAnalyzer.CompileScript(GetScript(SelectedScript).WorkingContents);
+			if (result is Exception ex)
+			{
 				MessageBox.Show(ex.Message, "An error occured", MessageBoxButtons.OK);
-            }
-            else
-            {
-				try {
+			}
+			else
+			{
+				try
+				{
 					Task.WaitAll((Task)result);
+
+					var loopDelegate = scriptAnalyzer.globals.formula.Loop;
+					var setupDelegate = scriptAnalyzer.globals.formula.Setup;
+					simulationResult = Simulator.Simulator.Simulate(
+						simulateFor: SimTime,
+						fps: 30,
+						setupDelegate: setupDelegate,
+						loopDelegate: loopDelegate,
+						robot:Robot.GetRobot(SelectedRobot));
 				}
 				catch (AggregateException ex2)
 				{
 					MessageBox.Show($"Error running script: {ex2.InnerException.Message}");
+					return;
 				}
-				var loopDelegate = scriptAnalyzer.globals.formula.Loop;
-				var setupDelegate = scriptAnalyzer.globals.formula.Setup;
-				var simulationResult = Simulator.Simulator.Simulate(
-					simulateFor: SimTime,
-					fps: 30,
-					setupDelegate: setupDelegate,
-					loopDelegate: loopDelegate);
-            }
+				Debug.Write(String.Concat(simulationResult.Select
+					(x => $"{x.FrameNumber}:  Position = {x.RobotCoordinates.Position}, " +
+						  $"Direction = {x.RobotCoordinates.RotationAngle}").Select(x => x+"\n")));
+
+				SimulationResultViewer srv
+					= new(Tracks[SelectedTrack], RobotsImages[SelectedRobot], simulationResult);
+				srv.Show();
+			}
 		}
     }
 }
