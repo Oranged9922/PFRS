@@ -4,10 +4,10 @@ using Common.HardwareRepresentation;
 namespace Analyzer;
 public class Formula
 {
-    public delegate void SetupDelegate(IRobot robot);
-    public delegate void LoopDelegate(IRobot robot);
+    public delegate void SetupDelegate(IRobotInfo robotInfo);
+    public delegate void LoopDelegate(IRobotInfo robotInfo);
 
-    public SetupDelegate Setup = (IRobot robot)  => { };
-    public LoopDelegate Loop = (IRobot robot) => { };
+    public SetupDelegate Setup = (IRobotInfo robot)  => { };
+    public LoopDelegate Loop = (IRobotInfo robot) => { };
 }
 
