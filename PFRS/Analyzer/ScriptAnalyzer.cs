@@ -5,8 +5,9 @@ using System.Reflection;
 namespace Analyzer;
 public class ScriptAnalyzer
 {
-    private readonly List<Assembly> assemblies;
-    private readonly List<string> imports;
+    private List<Assembly> assemblies;
+    private List<string> imports;
+    public Globals globals;
     public ScriptAnalyzer()
     {
         assemblies = new();
@@ -19,19 +20,29 @@ public class ScriptAnalyzer
         imports = new()
         {
             "System",
-            "PFRS",
+            //"PFRS",
             "Common.HardwareRepresentation"
         };
 
-
+        globals = new Globals()
+        {
+            formula = new Formula(),
+        };
+        
     }
 
-    public Task CompileScript(string sourceCode)
+    public object CompileScript(string sourceCode)
     {
-        return CSharpScript.RunAsync(
-            sourceCode,
-            globals: null,
-            options: ScriptOptions.Default.WithReferences(assemblies).AddImports(imports));
+        try {
+            return CSharpScript.RunAsync(
+                sourceCode,
+                globals: globals,
+                options: ScriptOptions.Default.WithReferences(assemblies).AddImports(imports));
+            }
+        catch(Exception e)
+        {
+            return e;
+        }
     }
 }
 
@@ -40,13 +51,5 @@ public class ScriptAnalyzer
 /// </summary>
 public class Globals
 {
-    /// <summary>
-    /// Optional text parameter (usually from form's 'Params:' field).
-    /// </summary>
-    public string param;
-
-    /// <summary>
-    /// Parameter map for passing values in/out of the script.
-    /// </summary>
-    public Dictionary<string, object> context;
+    public Formula formula;
 }
