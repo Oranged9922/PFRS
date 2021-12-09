@@ -8,38 +8,29 @@ namespace Common.HardwareRepresentation
 {
     public abstract class Robot : IRobot
     {
-        public Dictionary<string, object> Properties { get; set; } = new Dictionary<string, object>()
-        {
-            {"Position", new RobotCoordinates()},
-            {"Sensors", new List<ISensor>()},
-        };
-        public Dictionary<string, object> Methods { get; set; } = new Dictionary<string, object>();
-
-
         // PUT CONSTRUCTORS HERE !!
-        private static readonly List<Func<IRobot>> _ctors = new()
+        private static readonly Dictionary<string,Func<IRobot>> _ctors = new()
         {
-            () => new FiveSensorsRobot(),
+            { "FiveSensorsRobot", () => new FiveSensorsRobot() },
         };
+
+        public abstract IRobotInfo RobotInfo { get; }
+        public RobotCoordinates RobotCoordinates { get; set; }
+
+        public static IRobot GetRobot(string robotName)
+        {
+                return _ctors[robotName].Invoke();
+        }
+
+        public abstract void Update(int fps);
 
         public static void GetRobots(Dictionary<string, IRobot> result)
         {
             foreach (var item in _ctors)
             {
-                IRobot r = item.Invoke();
-                result[r.GetType().ToString()] = r;
+                result[item.Key] = item.Value.Invoke();
             }
-        }
 
-        public void AddMethod((string methodName, object method) keyValue)
-        {
-            Methods[keyValue.methodName] = keyValue.method;
         }
-
-        public void AddProperty((string propertyName, object property) keyValue)
-        {
-            Properties[keyValue.propertyName] = keyValue.property;
-        }
-
     }
 }

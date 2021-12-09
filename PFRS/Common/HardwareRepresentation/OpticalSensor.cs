@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Utils.Vector;
 namespace Common.HardwareRepresentation
 {
     public class OpticalSensor : ISensor
     {
         public IRobot MountedOn;
-        public object GetOutput()
+        public Vector2 relPosFromRobotCenter;
+
+        public float GetReading()
         {
-            
+            throw new NotImplementedException();
         }
     }
 }

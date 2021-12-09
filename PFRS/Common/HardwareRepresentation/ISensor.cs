@@ -2,6 +2,6 @@
 {
     public interface ISensor
     {
-        public object GetOutput();
+        public float GetReading();
     }
 }
