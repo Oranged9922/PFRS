@@ -59,14 +59,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ButtonSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 283</value>
+    <value>607, 604</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ButtonSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 1, 2, 1</value>
+    <value>4, 2, 4, 2</value>
   </data>
   <data name="ButtonSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 22</value>
+    <value>150, 47</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ButtonSave.TabIndex" type="System.Int32, mscorlib">
@@ -88,13 +88,13 @@
     <value>8</value>
   </data>
   <data name="ButtonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 283</value>
+    <value>451, 604</value>
   </data>
   <data name="ButtonCancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 1, 2, 1</value>
+    <value>4, 2, 4, 2</value>
   </data>
   <data name="ButtonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 22</value>
+    <value>150, 47</value>
   </data>
   <data name="ButtonCancel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -115,13 +115,13 @@
     <value>7</value>
   </data>
   <data name="ButtonDefault.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 283</value>
+    <value>295, 604</value>
   </data>
   <data name="ButtonDefault.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 1, 2, 1</value>
+    <value>4, 2, 4, 2</value>
   </data>
   <data name="ButtonDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 22</value>
+    <value>150, 47</value>
   </data>
   <data name="ButtonDefault.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -142,13 +142,13 @@
     <value>6</value>
   </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 22</value>
+    <value>295, 47</value>
   </data>
   <data name="comboBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 1, 2, 1</value>
+    <value>4, 2, 4, 2</value>
   </data>
   <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 23</value>
+    <value>242, 40</value>
   </data>
   <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -172,10 +172,13 @@
     <value>True</value>
   </data>
   <data name="LabelTrackSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 25</value>
+    <value>217, 53</value>
+  </data>
+  <data name="LabelTrackSelect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="LabelTrackSelect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 15</value>
+    <value>75, 32</value>
   </data>
   <data name="LabelTrackSelect.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -196,10 +199,13 @@
     <value>4</value>
   </data>
   <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 49</value>
+    <value>295, 105</value>
+  </data>
+  <data name="numericUpDown1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 23</value>
+    <value>245, 39</value>
   </data>
   <data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -224,10 +230,13 @@
     <value>NoControl</value>
   </data>
   <data name="LabelSimulationTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 51</value>
+    <value>30, 109</value>
+  </data>
+  <data name="LabelSimulationTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="LabelSimulationTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 15</value>
+    <value>278, 32</value>
   </data>
   <data name="LabelSimulationTime.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -254,10 +263,13 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRobotSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 79</value>
+    <value>208, 169</value>
+  </data>
+  <data name="LabelRobotSelect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="LabelRobotSelect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 15</value>
+    <value>84, 32</value>
   </data>
   <data name="LabelRobotSelect.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -278,13 +290,13 @@
     <value>0</value>
   </data>
   <data name="ComboBoxRobotSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 76</value>
+    <value>295, 162</value>
   </data>
   <data name="ComboBoxRobotSelect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 1, 2, 1</value>
+    <value>4, 2, 4, 2</value>
   </data>
   <data name="ComboBoxRobotSelect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 23</value>
+    <value>242, 40</value>
   </data>
   <data name="ComboBoxRobotSelect.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -305,13 +317,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
+    <value>13, 32</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>419, 310</value>
+    <value>778, 661</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 1, 2, 1</value>
+    <value>4, 2, 4, 2</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

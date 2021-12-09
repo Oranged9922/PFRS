@@ -109,6 +109,7 @@
             this.ComboBoxRobotSelect.FormattingEnabled = true;
             resources.ApplyResources(this.ComboBoxRobotSelect, "ComboBoxRobotSelect");
             this.ComboBoxRobotSelect.Name = "ComboBoxRobotSelect";
+            this.ComboBoxRobotSelect.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRobotSelect_SelectedIndexChanged);
             // 
             // FormSettings
             // 

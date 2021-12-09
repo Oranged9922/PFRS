@@ -2,6 +2,7 @@ using Analyzer;
 using Common.HardwareRepresentation;
 
 using System.Diagnostics;
+
 namespace PFRS
 {
     public partial class FormMain : Form
@@ -34,22 +35,33 @@ namespace PFRS
 		/// Simulation time in seconds, default set to 30 seconds
 		/// </summary>
 		public int SimTime { get; internal set; } = 30;
+        public string SelectedRobot { get; internal set; }
 
         public FormMain()
 		{
 			InitializeComponent();
 			Tracks = LoadTracks();
+			Robots = LoadRobots();
 			SetDefaults();
 
 		}
 
-		/// <summary>
-		/// Sets default values used in the 
-		/// </summary>
-		internal void SetDefaults()
+      
+        /// <summary>
+        /// Sets default values used in the 
+        /// </summary>
+        internal void SetDefaults()
 		{
 			TrackPictureBox.Image = Tracks["default.png"];
 			SelectedTrack = "default.png";
+		}
+
+		private Dictionary<string, IRobot> LoadRobots()
+		{
+			// add default robot, this one has to be there
+			Dictionary<string, IRobot> result = new();
+			Robot.GetRobots(result);
+			return result;
 		}
 
 		/// <summary>
@@ -258,8 +270,28 @@ namespace PFRS
         private void ButtonRunSingleScript_Click(object sender, EventArgs e)
         {
             ScriptAnalyzer scriptAnalyzer = new Analyzer.ScriptAnalyzer();
-			var task = scriptAnalyzer.CompileScript(GetScript(SelectedScript).Contents);
-
+			var result = scriptAnalyzer.CompileScript(GetScript(SelectedScript).Contents);
+			if(result is Exception ex)
+            {
+				MessageBox.Show(ex.Message, "An error occured", MessageBoxButtons.OK);
+            }
+            else
+            {
+				try {
+					Task.WaitAll((Task)result);
+				}
+				catch (AggregateException ex2)
+				{
+					MessageBox.Show($"Error running script: {ex2.InnerException.Message}");
+				}
+				var loopDelegate = scriptAnalyzer.globals.formula.Loop;
+				var setupDelegate = scriptAnalyzer.globals.formula.Setup;
+				var simulationResult = Simulator.Simulator.Simulate(
+					simulateFor: SimTime,
+					fps: 30,
+					setupDelegate: setupDelegate,
+					loopDelegate: loopDelegate);
+            }
 		}
     }
 }

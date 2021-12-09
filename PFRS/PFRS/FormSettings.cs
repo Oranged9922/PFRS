@@ -15,6 +15,8 @@ namespace PFRS
 
         public string SelectedTrack { get; internal set; }
         public int SimTime { get; internal set; }
+        public object SelectedRobot { get; private set; }
+
         internal FormMain fMain;
         public FormSettings(FormMain m)
         {
@@ -23,6 +25,9 @@ namespace PFRS
 
             comboBox1.Text = fMain.SelectedTrack;
             comboBox1.Items.AddRange(fMain.Tracks.Keys.ToArray());
+
+            ComboBoxRobotSelect.Text = fMain.SelectedRobot;
+            ComboBoxRobotSelect.Items.AddRange(fMain.Robots.Keys.ToArray());
             this.SimTime = fMain.SimTime;
             this.SelectedTrack = comboBox1.Text;
 
@@ -53,6 +58,11 @@ namespace PFRS
 
             fMain.SettingsOpen = false;
             this.Close();
+        }
+
+        private void ComboBoxRobotSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.SelectedRobot = ComboBoxRobotSelect.Text;
         }
     }
 }
