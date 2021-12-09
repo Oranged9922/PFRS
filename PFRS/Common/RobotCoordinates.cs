@@ -1,4 +1,4 @@
-﻿namespace PFRS.Common;
+﻿namespace Common;
 public record struct RobotCoordinates
 {
     public decimal X;

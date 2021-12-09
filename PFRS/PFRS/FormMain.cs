@@ -1,11 +1,10 @@
 using Analyzer;
-using PFRS.Common.HardwareRepresentation;
-using PFRS.Simulator;
-using PFRS.Simulator.SceneRepresentation;
+using Common.HardwareRepresentation;
+
 using System.Diagnostics;
 namespace PFRS
 {
-	public partial class FormMain : Form
+    public partial class FormMain : Form
 	{
 		/// <summary>
 		/// Boolean representing whether settings window is open
@@ -258,7 +257,7 @@ namespace PFRS
 
         private void ButtonRunSingleScript_Click(object sender, EventArgs e)
         {
-			Analyzer.ScriptAnalyzer scriptAnalyzer = new Analyzer.ScriptAnalyzer();
+            ScriptAnalyzer scriptAnalyzer = new Analyzer.ScriptAnalyzer();
 			var task = scriptAnalyzer.CompileScript(GetScript(SelectedScript).Contents);
 
 		}

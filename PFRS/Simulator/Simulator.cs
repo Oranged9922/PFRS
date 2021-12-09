@@ -1,6 +1,6 @@
-﻿using PFRS.Simulator.SceneRepresentation;
+﻿using Simulator.SceneRepresentation;
 
-namespace PFRS.Simulator
+namespace Simulator
 {
     public class Simulator
     {
@@ -12,14 +12,14 @@ namespace PFRS.Simulator
             first.ApplySettings(sceneSettings);
             frames.Add(first);
 
-            for(int i = 0; i < sceneSettings.DurationInFrames; i++) frames.Add(GenerateNextFrame(frames[i - 1], script, sceneSettings.DurationInFrames));
+            for (int i = 0; i < sceneSettings.DurationInFrames; i++) frames.Add(GenerateNextFrame(frames[i - 1], script, sceneSettings.DurationInFrames));
             return frames;
         }
 
         private static SimulationFrame GenerateNextFrame(SimulationFrame simulationFrame, SimulatorScript script, int totalFrames)
         {
             SimulationFrame frame = new();
-            SceneSettings settings = new(script.Loop,simulationFrame, totalFrames);
+            SceneSettings settings = new(script.Loop, simulationFrame, totalFrames);
             frame.ApplySettings(settings);
             return frame;
         }

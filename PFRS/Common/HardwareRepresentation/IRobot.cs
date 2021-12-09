@@ -1,4 +1,4 @@
-﻿namespace PFRS.Common.HardwareRepresentation;
+﻿namespace Common.HardwareRepresentation;
 public interface IRobot
 {
 

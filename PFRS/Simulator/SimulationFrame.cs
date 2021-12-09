@@ -1,4 +1,4 @@
-﻿namespace PFRS.Simulator
+﻿namespace Simulator
 {
     public class SimulationFrame
     {

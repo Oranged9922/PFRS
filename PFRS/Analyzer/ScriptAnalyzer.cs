@@ -2,21 +2,21 @@
 using Microsoft.CodeAnalysis.Scripting;
 using System.Reflection;
 
-namespace PFRS.Analyzer;
+namespace Analyzer;
 public class ScriptAnalyzer
 {
     private readonly List<Assembly> assemblies;
     private readonly List<string> imports;
     public ScriptAnalyzer()
     {
-        this.assemblies = new();
+        assemblies = new();
         // add all assemblies
         assemblies.Add(Assembly.GetExecutingAssembly());
         var assemblyNames = Assembly.GetExecutingAssembly().GetReferencedAssemblies();
         foreach (var assemblyName in assemblyNames)
             assemblies.Add(Assembly.Load(assemblyName));
 
-        this.imports = new()
+        imports = new()
         {
             "System",
             "PFRS",
@@ -48,5 +48,5 @@ public class Globals
     /// <summary>
     /// Parameter map for passing values in/out of the script.
     /// </summary>
-    public Dictionary<string,object> context;
+    public Dictionary<string, object> context;
 }

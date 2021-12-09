@@ -1,4 +1,4 @@
-﻿namespace PFRS.Simulator.SceneRepresentation;
+﻿namespace Simulator.SceneRepresentation;
 public abstract class Scene
 {
 
