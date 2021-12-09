@@ -9,9 +9,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analyzer", "Analyzer\Analyz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{F5EBD0BD-8CDC-40BB-9F95-16E1DE1FF8F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulator", "Simulator\Simulator.csproj", "{57B0C1B7-2907-4D5D-BD30-5CA30CD6BA1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simulator", "Simulator\Simulator.csproj", "{57B0C1B7-2907-4D5D-BD30-5CA30CD6BA1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{9CB4F1C1-61C9-49A0-AEAE-787A42731D3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{9CB4F1C1-61C9-49A0-AEAE-787A42731D3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{C28EA3E3-5A5F-43C2-8C1A-4BFA64458094}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{CEC69339-7623-440C-9CB4-4D812B4469A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{DE6A8B55-ED1F-4A05-9D22-9363C95C5403}"
+	ProjectSection(SolutionItems) = preProject
+		data\data\scripts\script.cs = data\data\scripts\script.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tracks", "tracks", "{C32717D6-C8C0-4596-B1AD-BB47B4C36262}"
+	ProjectSection(SolutionItems) = preProject
+		data\data\tracks\default.png = data\data\tracks\default.png
+		data\data\tracks\track2.png = data\data\tracks\track2.png
+		data\data\tracks\track3.png = data\data\tracks\track3.png
+		data\data\tracks\track4.png = data\data\tracks\track4.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +59,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CEC69339-7623-440C-9CB4-4D812B4469A1} = {C28EA3E3-5A5F-43C2-8C1A-4BFA64458094}
+		{DE6A8B55-ED1F-4A05-9D22-9363C95C5403} = {CEC69339-7623-440C-9CB4-4D812B4469A1}
+		{C32717D6-C8C0-4596-B1AD-BB47B4C36262} = {CEC69339-7623-440C-9CB4-4D812B4469A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DF0EF825-0E4F-44EA-A59A-B1CBAC035E4F}
