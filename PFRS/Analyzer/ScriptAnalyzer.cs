@@ -20,7 +20,6 @@ public class ScriptAnalyzer
         imports = new()
         {
             "System",
-            //"PFRS",
             "Common.HardwareRepresentation"
         };
 
