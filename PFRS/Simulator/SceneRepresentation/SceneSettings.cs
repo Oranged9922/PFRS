@@ -15,8 +15,4 @@ public class SceneSettings
         this.DurationInFrames = DurationInFrames;
 
     }
-    public SceneSettings()
-    {
-
-    }
 }

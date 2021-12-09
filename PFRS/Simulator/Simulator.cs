@@ -1,27 +1,23 @@
-﻿using Simulator.SceneRepresentation;
+﻿using Analyzer;
+using Common.HardwareRepresentation;
+using Simulator.SceneRepresentation;
 
 namespace Simulator
 {
-    public class Simulator
+    public static class Simulator
     {
-        public static List<SimulationFrame> Simulate(SceneSettings sceneSettings, SimulatorScript script)
+
+        public static List<SimulationFrame> Simulate(int simulateFor = 5, int fps = 30, Formula.SetupDelegate setupDelegate = null, Formula.LoopDelegate loopDelegate = null, IRobot robot = null)
         {
             List<SimulationFrame> frames = new();
-            // first frame is generated with -setup-
-            SimulationFrame first = new();
-            first.ApplySettings(sceneSettings);
-            frames.Add(first);
+            setupDelegate.Invoke(robot);
+            for (int i = 0; i < simulateFor*fps; i++)
+            {
+                loopDelegate.Invoke(robot);
 
-            for (int i = 0; i < sceneSettings.DurationInFrames; i++) frames.Add(GenerateNextFrame(frames[i - 1], script, sceneSettings.DurationInFrames));
+                frames.Add(new SimulationFrame(robot, i+1));
+            }
             return frames;
-        }
-
-        private static SimulationFrame GenerateNextFrame(SimulationFrame simulationFrame, SimulatorScript script, int totalFrames)
-        {
-            SimulationFrame frame = new();
-            SceneSettings settings = new(script.Loop, simulationFrame, totalFrames);
-            frame.ApplySettings(settings);
-            return frame;
         }
     }
 }
