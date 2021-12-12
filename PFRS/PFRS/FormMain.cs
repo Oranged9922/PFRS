@@ -49,6 +49,8 @@ namespace PFRS
 			Robots = LoadRobots();
 			RobotsImages = LoadRobotsImages();
 			SetDefaults();
+		}
+
         private Dictionary<string, float[,]>? LoadTracksAsArray()
         {
 			var res = new Dictionary<string, float[,]>();
@@ -70,7 +72,7 @@ namespace PFRS
 			return res;
 		}
 
-        private Dictionary<string, Bitmap> LoadRobotsImages()
+		private Dictionary<string, Bitmap> LoadRobotsImages()
         {
 			Dictionary<string, Bitmap> result = new()
 			{
@@ -313,7 +315,6 @@ namespace PFRS
 			SelectedScript = 0;
         }
 
-		// broken
 		private void ButtonRunSingleScript_Click(object sender, EventArgs e)
 		{
 			ScriptAnalyzer scriptAnalyzer = new();
@@ -331,21 +332,23 @@ namespace PFRS
 
 					var loopDelegate = scriptAnalyzer.globals.formula.Loop;
 					var setupDelegate = scriptAnalyzer.globals.formula.Setup;
-					simulationResult = Simulator.Simulator.Simulate(
-						simulateFor: SimTime,
-						fps: 30,
-						setupDelegate: setupDelegate,
-						loopDelegate: loopDelegate,
-						robot:Robot.GetRobot(SelectedRobot));
+					simulationResult = Simulator.Simulator.Simulate
+						(
+							simulateFor:	SimTime,
+							fps:			FPS,
+							setupDelegate:	setupDelegate,
+							loopDelegate:	loopDelegate,
+							robot:			SetInitialValuesForRobot(Robot.GetRobotCtor(SelectedRobot))
+						);
 				}
 				catch (AggregateException ex2)
 				{
 					MessageBox.Show($"Error running script: {ex2.InnerException.Message}");
 					return;
 				}
-				Debug.Write(String.Concat(simulationResult.Select
-					(x => $"{x.FrameNumber}:  Position = {x.RobotCoordinates.Position}, " +
-						  $"Direction = {x.RobotCoordinates.RotationAngle}").Select(x => x+"\n")));
+				//Debug.Write(String.Concat(simulationResult.Select
+				//	(x => $"{x.FrameNumber}:  Position = {x.RobotCoordinates.Position}, " +
+				//		  $"Direction = {x.RobotCoordinates.RotationAngle}").Select(x => x+"\n")));
 
 				SimulationResultViewer srv
 					= new(Tracks[SelectedTrack], RobotsImages[SelectedRobot], simulationResult);
