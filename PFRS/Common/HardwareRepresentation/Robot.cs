@@ -16,10 +16,13 @@ namespace Common.HardwareRepresentation
 
         public abstract IRobotInfo RobotInfo { get; }
         public RobotCoordinates RobotCoordinates { get; set; }
+        public float[,] Track { get; set; }
+        public int SizeX { get; set; }
+        public int SizeY { get; set; }
 
-        public static IRobot GetRobot(string robotName)
+        public static Func<IRobot> GetRobotCtor(string robotName)
         {
-                return _ctors[robotName].Invoke();
+                return _ctors[robotName];
         }
 
         public abstract void Update(int fps);
