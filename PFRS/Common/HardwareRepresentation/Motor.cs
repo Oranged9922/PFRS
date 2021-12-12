@@ -1,10 +1,9 @@
-﻿using Utils;
-using Utils.Vector;
+﻿using Utils.Vector;
 namespace Common.HardwareRepresentation
 {
     internal class Motor : IMotor
     {
-        internal int _speed = 51;
+        internal int _speed = 50;
 
         internal IRobot MountedOn;
         internal Vector2 relPosFromRobotCenter;
