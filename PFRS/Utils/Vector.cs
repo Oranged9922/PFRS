@@ -16,6 +16,12 @@ public struct Vector2
         this.Y = y;
     }
 
+
+    public static Vector2 operator +(Vector2 a, Vector2 b)
+        => new(a.X+b.X, a.Y+b.Y);
+    public static Vector2 operator *(Vector2 a, Vector2 b)
+        => new(a.X*b.X,a.Y*b.Y);
+
     static Vector2()
     {
         Zero = new Vector2(0,0);
@@ -25,5 +31,14 @@ public struct Vector2
     {
         return $"({X}, {Y})";
     }
+}
+
+
+public static class Extensions
+{
+
+    public static Vector2 AsInt(this Vector2 orig) =>
+        new Vector2((int)orig.X, (int)orig.Y);
+
 }
 
