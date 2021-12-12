@@ -37,6 +37,8 @@ namespace PFRS
 		/// Simulation time in seconds, default set to 30 seconds
 		/// </summary>
 		public int SimTime { get; internal set; } = 30;
+		public int FPS { get; internal set; } = 30;
+		public float RotationAngle = 0;
         public string SelectedRobot { get; internal set; }
 
         public FormMain()
