@@ -15,6 +15,7 @@ namespace PFRS
 		/// Stores images of different tracks
 		/// </summary>
 		internal Dictionary<string, Bitmap> Tracks;
+		internal Dictionary<string, float[,]> TracksAsArray;
 		/// <summary>
 		/// Stores Robots that are implemented
 		/// </summary>
@@ -42,10 +43,29 @@ namespace PFRS
 		{
 			InitializeComponent();
 			Tracks = LoadTracks();
+			TracksAsArray = LoadTracksAsArray();
 			Robots = LoadRobots();
 			RobotsImages = LoadRobotsImages();
 			SetDefaults();
+        private Dictionary<string, float[,]>? LoadTracksAsArray()
+        {
+			var res = new Dictionary<string, float[,]>();
 
+			foreach (var item in Tracks)
+			{
+				var name = item.Key;
+				var bitmap = item.Value;
+				var result = new float[bitmap.Width, bitmap.Height];
+				for (int i = 0; i < bitmap.Width; i++)
+				{
+					for (int j = 0; j < bitmap.Height; j++)
+					{
+						result[i, j] = bitmap.GetPixel(i, j).ToArgb();
+					}
+				}
+				res[name] = result;
+			}
+			return res;
 		}
 
         private Dictionary<string, Bitmap> LoadRobotsImages()
