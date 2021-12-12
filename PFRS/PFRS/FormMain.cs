@@ -355,5 +355,20 @@ namespace PFRS
 				srv.Show();
 			}
 		}
+
+        private IRobot SetInitialValuesForRobot(Func<IRobot> robotCtor)
+        {
+			var image = RobotsImages[SelectedRobot];
+			// set x,y to be in center ( img.x/2 , img.y/2)
+			var robot = robotCtor.Invoke();
+			robot.Track = TracksAsArray[SelectedTrack];
+			robot.RobotCoordinates = new() {
+				Position = new(image.Width / 2, image.Height / 2),
+				RotationAngle = this.RotationAngle
+			};
+			robot.SizeX = image.Width;
+			robot.SizeY = image.Height;
+			return robot;
+        }
     }
 }
