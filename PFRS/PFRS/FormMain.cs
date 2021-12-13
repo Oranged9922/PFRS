@@ -38,7 +38,7 @@ namespace PFRS
 		/// </summary>
 		public int SimTime { get; internal set; } = 30;
 		public int FPS { get; internal set; } = 30;
-		public float RotationAngle = 0;
+		public float RotationAngle = 90;
         public string SelectedRobot { get; internal set; }
 
         public FormMain()
