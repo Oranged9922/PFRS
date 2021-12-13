@@ -48,11 +48,10 @@ namespace Common.HardwareRepresentation
             // and right wheel moves in direction of robot when 50>.
 
             double dTime = 10.0f / fps;
-            dTime /= 100;
             //left wheel traversed
             double lWheel = (((Motor)RobotInfo.Motors[0])._speed-50) * dTime;
             //right wheel traversed
-            double rWheel = (((Motor)RobotInfo.Motors[1])._speed+50) * dTime;
+            double rWheel = (((Motor)RobotInfo.Motors[1])._speed-50) * dTime;
 
             // from this we know distance between individual wheels
 
