@@ -22,6 +22,10 @@ public struct Vector2
     public static Vector2 operator *(Vector2 a, Vector2 b)
         => new(a.X*b.X,a.Y*b.Y);
 
+    public static Vector2 operator -(Vector2 a, Vector2 b)
+        => new(a.X - b.X, a.Y - b.Y);
+
+
     static Vector2()
     {
         Zero = new Vector2(0,0);
