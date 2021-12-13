@@ -33,7 +33,7 @@ namespace PFRS
             PictureBoxTrack.Image = Track;
 
             var pos = simulationFrames[0].RobotCoordinates.Position;
-            PictureBoxRobot.Location = new Point((int)pos.X-3*Robot.Width/4, (int)pos.Y-3*Robot.Height/4);
+            PictureBoxRobot.Location = new Point((int)pos.X-Robot.Width, (int)pos.Y-Robot.Height);
 
         }
 
@@ -52,9 +52,9 @@ namespace PFRS
             prevAngle = (float)simulationFrames[Slider.Value].RobotCoordinates.RotationAngle;
             PictureBoxRobot.Location = new Point
                 (
-                    (int)pos.X-3*Robot.Width/4, (int)pos.Y-3*Robot.Height/4
+                    (int)pos.X-Robot.Width, 
+                    (int)pos.Y-Robot.Height
                 );
-
         }
 
 
