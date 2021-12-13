@@ -1,11 +1,12 @@
-﻿namespace Common.HardwareRepresentation;
+﻿using Utils.Vector;
+
+namespace Common.HardwareRepresentation;
 public interface IRobot
 {
     public IRobotInfo RobotInfo { get; }
     public RobotCoordinates RobotCoordinates { get; set; }
     float[,] Track { get; set; }
-    int SizeX { get; set; }
-    int SizeY { get; set; }
+    Vector2 BitmapSize { get; set; }
 
     void Update(int fps);
 }
