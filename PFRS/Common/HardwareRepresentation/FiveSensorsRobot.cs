@@ -15,23 +15,24 @@ namespace Common.HardwareRepresentation
         public override IRobotInfo RobotInfo { get; }
 
 
-        public FiveSensorsRobot(double initPosX = 0, double initPosY = 0, decimal initialAngle = 0)
+        public FiveSensorsRobot(Vector2 UV = new(), double initPosX = 0, double initPosY = 0, double initialAngle = 0)
         {
-            this.RobotCoordinates = new() { Position = new(initPosX, initPosY) };
+            this.RobotCoordinates = new() { Position = new(initPosX, initPosY), RotationAngle = initialAngle};
+            
             RobotInfo = new RobotInfo()
             {
                 Sensors = new()
                 {
-                    new OpticalSensor() { MountedOn = this, relPosFromRobotCenter = new(-0.5 , 0.25) }, //most right
-                    new OpticalSensor() { MountedOn = this, relPosFromRobotCenter = new(-0.15, 0.25) }, // right
-                    new OpticalSensor() { MountedOn = this, relPosFromRobotCenter = new( 0.0 , 0.25) }, // center
-                    new OpticalSensor() { MountedOn = this, relPosFromRobotCenter = new( 0.15, 0.25) }, // left
-                    new OpticalSensor() { MountedOn = this, relPosFromRobotCenter = new( 0.5 , 0.25) }  // most left
+                    new OpticalSensor() { MountedOn = this, UVCoords = new(2  , 95) }, //most right
+                    new OpticalSensor() { MountedOn = this, UVCoords = new(37 , 95) }, // right
+                    new OpticalSensor() { MountedOn = this, UVCoords = new(52 , 95) }, // center
+                    new OpticalSensor() { MountedOn = this, UVCoords = new(67 , 95) }, // left
+                    new OpticalSensor() { MountedOn = this, UVCoords = new(102, 95) }  // most left
                 },
                 Motors = new()
                 {
-                    new Motor() { MountedOn = this, relPosFromRobotCenter = new(-0.5, 0) }, // left wheel
-                    new Motor() { MountedOn = this, relPosFromRobotCenter = new( 0.5, 0) }  // right wheel
+                    new Motor() { MountedOn = this, relPosFromRobotCenter = new(0, 25) }, // left wheel
+                    new Motor() { MountedOn = this, relPosFromRobotCenter = new(105, 25) }  // right wheel
                 },
             };
         }
