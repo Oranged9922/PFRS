@@ -37,6 +37,25 @@ public struct Vector2
     }
 }
 
+public struct Vector3
+{
+    public double X;
+    public double Y;
+    public double Z;
+
+    public static double DotProduct(Vector3 vector, Vector3 other)
+        => vector.X * other.X + vector.Y * other.Y + vector.Z *other.Z;
+    public double LengthSquared { get => DotProduct(this, this); }
+    public double Length { get => Math.Sqrt(LengthSquared); }
+
+    public Vector3(double X = 0, double Y = 0, double Z = 0)
+    {
+        this.X = X;
+        this.Y = Y;
+        this.Z = Z;
+    }
+}
+
 
 public static class Extensions
 {
