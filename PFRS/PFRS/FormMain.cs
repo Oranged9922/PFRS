@@ -366,8 +366,7 @@ namespace PFRS
 				Position = new(image.Width / 2, image.Height / 2),
 				RotationAngle = this.RotationAngle
 			};
-			robot.SizeX = image.Width;
-			robot.SizeY = image.Height;
+			robot.BitmapSize = new(image.Width,image.Height);
 			return robot;
         }
     }

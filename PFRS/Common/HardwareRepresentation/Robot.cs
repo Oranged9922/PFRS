@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utils.Vector;
 
 namespace Common.HardwareRepresentation
 {
@@ -17,8 +18,7 @@ namespace Common.HardwareRepresentation
         public abstract IRobotInfo RobotInfo { get; }
         public RobotCoordinates RobotCoordinates { get; set; }
         public float[,] Track { get; set; }
-        public int SizeX { get; set; }
-        public int SizeY { get; set; }
+        public Vector2 BitmapSize { get; set; }
 
         public static Func<IRobot> GetRobotCtor(string robotName)
         {
