@@ -56,6 +56,47 @@ public struct Vector3
     }
 }
 
+public struct Matrix3
+{
+
+    public static Matrix3 Identity { get; set; }
+
+    public float M11;
+
+    public Vector2 ApplyTrasform(Vector2 v)
+    =>
+         new Vector2
+            (
+                M11 * v.X + M12 * v.Y + M13,
+                M21 * v.X + M22 * v.Y + M23
+            );
+
+    public float M12;
+    public float M13;
+
+    public float M21;
+    public float M22;
+    public float M23;
+
+    public float M31;
+    public float M32;
+    public float M33;
+
+
+    public Matrix3(float M11, float M12, float M13, float M21, float M22, float M23, float M31, float M32, float M33) : this()
+    {
+        this.M11 = M11;
+        this.M12 = M12;
+        this.M13 = M13;
+        this.M21 = M21;
+        this.M22 = M22;
+        this.M23 = M23;
+        this.M31 = M31;
+        this.M32 = M32;    
+        this.M33 = M33;
+    }
+}
+
 
 public static class Extensions
 {
@@ -63,5 +104,19 @@ public static class Extensions
     public static Vector2 AsInt(this Vector2 orig) =>
         new Vector2((int)orig.X, (int)orig.Y);
 
+
+    public static Matrix3 RotateAndTranslate(this Matrix3 m, double angle, Vector2 vec)
+   =>
+           new(
+                   M11: (float)Math.Cos(angle),
+                   M12: -(float)Math.Sin(angle),
+                   M13: (float)(vec.X),
+                   M21: (float)Math.Sin(angle),
+                   M22: -(float)Math.Cos(angle),
+                   M23: (float)(vec.Y),
+                   M31: 0,
+                   M32: 0,
+                   M33: 1
+               );
 }
 
