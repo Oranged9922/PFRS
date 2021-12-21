@@ -19,6 +19,10 @@ namespace Common.HardwareRepresentation
         public RobotCoordinates RobotCoordinates { get; set; }
         public float[,] Track { get; set; }
         public Vector2 BitmapSize { get; set; }
+        public abstract Vector2 BitmapSizeCenter { get; set; }
+
+        public abstract Vector2[] SensorsCoordinates { get; set; }
+        public abstract int[] MotorsSpeed { get; set; }
 
         public static Func<IRobot> GetRobotCtor(string robotName)
         {
