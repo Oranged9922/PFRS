@@ -2,6 +2,7 @@ using Analyzer;
 using Common.HardwareRepresentation;
 
 using System.Diagnostics;
+using Utils.Vector;
 
 namespace PFRS
 {
