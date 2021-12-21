@@ -29,6 +29,8 @@ namespace PFRS
             ComboBoxRobotSelect.Text = fMain.SelectedRobot;
             ComboBoxRobotSelect.Items.AddRange(fMain.Robots.Keys.ToArray().Select(x => x.Split('.').Last()).ToArray());
             this.SimTime = fMain.SimTime;
+            this.numericUpDown1.Maximum = 9999;
+            this.numericUpDown1.Value = this.SimTime;
             this.SelectedTrack = comboBox1.Text;
             this.SelectedRobot = ComboBoxRobotSelect.Text;
 
@@ -64,6 +66,11 @@ namespace PFRS
         private void ComboBoxRobotSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedRobot = ComboBoxRobotSelect.Text;
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            this.SimTime = (int)numericUpDown1.Value;
         }
     }
 }
