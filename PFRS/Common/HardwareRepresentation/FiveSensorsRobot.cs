@@ -79,6 +79,19 @@ namespace Common.HardwareRepresentation
                 Position = new Vector2(cPos.X + dX, cPos.Y + dY), 
                 RotationAngle =  cAngle+angle
             };
+
+            MotorsSpeed[0] = ((Motor)RobotInfo.Motors[0])._speed;
+            MotorsSpeed[1] = ((Motor)RobotInfo.Motors[1])._speed;
+            // add this so we can put this into simulation frame afterwards
+            this.SensorsCoordinates = new Vector2[]
+            {
+                ((OpticalSensor)RobotInfo.Sensors[0]).CurrentPosition,
+                ((OpticalSensor)RobotInfo.Sensors[1]).CurrentPosition,
+                ((OpticalSensor)RobotInfo.Sensors[2]).CurrentPosition,
+                ((OpticalSensor)RobotInfo.Sensors[3]).CurrentPosition,
+                ((OpticalSensor)RobotInfo.Sensors[4]).CurrentPosition
+            };
+
         }
     }
 }
