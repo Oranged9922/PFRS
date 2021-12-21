@@ -41,9 +41,17 @@
             this.PictureBoxRobot = new System.Windows.Forms.PictureBox();
             this.LabelSensrs = new System.Windows.Forms.Label();
             this.LabelSensors = new System.Windows.Forms.Label();
+            this.PictureBoxSensorsCoords = new System.Windows.Forms.PictureBox();
+            this.Sensors = new System.Windows.Forms.Label();
+            this.labelMotors = new System.Windows.Forms.Label();
+            this.motorsInfo = new System.Windows.Forms.Label();
+            this.PictureBoxSimulationFrame = new System.Windows.Forms.PictureBox();
+            this.SensorsOnly = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Slider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRobot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSensorsCoords)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSimulationFrame)).BeginInit();
             this.SuspendLayout();
             // 
             // Slider
@@ -74,10 +82,9 @@
             // 
             // PictureBoxTrack
             // 
-            this.PictureBoxTrack.Location = new System.Drawing.Point(12, 12);
+            this.PictureBoxTrack.Location = new System.Drawing.Point(12, 13);
             this.PictureBoxTrack.Name = "PictureBoxTrack";
             this.PictureBoxTrack.Size = new System.Drawing.Size(414, 556);
-            this.PictureBoxTrack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxTrack.TabIndex = 3;
             this.PictureBoxTrack.TabStop = false;
             // 
@@ -147,17 +154,16 @@
             // PictureBoxRobot
             // 
             this.PictureBoxRobot.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxRobot.Location = new System.Drawing.Point(12, 12);
+            this.PictureBoxRobot.Location = new System.Drawing.Point(12, 13);
             this.PictureBoxRobot.Name = "PictureBoxRobot";
             this.PictureBoxRobot.Size = new System.Drawing.Size(103, 98);
-            this.PictureBoxRobot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxRobot.TabIndex = 4;
             this.PictureBoxRobot.TabStop = false;
             // 
             // LabelSensrs
             // 
             this.LabelSensrs.AutoSize = true;
-            this.LabelSensrs.Location = new System.Drawing.Point(469, 58);
+            this.LabelSensrs.Location = new System.Drawing.Point(469, 86);
             this.LabelSensrs.Name = "LabelSensrs";
             this.LabelSensrs.Size = new System.Drawing.Size(50, 15);
             this.LabelSensrs.TabIndex = 11;
@@ -169,17 +175,81 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelSensors.AutoSize = true;
-            this.LabelSensors.Location = new System.Drawing.Point(518, 58);
+            this.LabelSensors.Location = new System.Drawing.Point(518, 86);
             this.LabelSensors.Name = "LabelSensors";
             this.LabelSensors.Size = new System.Drawing.Size(47, 15);
             this.LabelSensors.TabIndex = 10;
             this.LabelSensors.Text = "Sensors";
+            // 
+            // PictureBoxSensorsCoords
+            // 
+            this.PictureBoxSensorsCoords.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxSensorsCoords.Location = new System.Drawing.Point(12, 13);
+            this.PictureBoxSensorsCoords.Name = "PictureBoxSensorsCoords";
+            this.PictureBoxSensorsCoords.Size = new System.Drawing.Size(414, 555);
+            this.PictureBoxSensorsCoords.TabIndex = 12;
+            this.PictureBoxSensorsCoords.TabStop = false;
+            // 
+            // Sensors
+            // 
+            this.Sensors.AutoSize = true;
+            this.Sensors.Location = new System.Drawing.Point(469, 101);
+            this.Sensors.Name = "Sensors";
+            this.Sensors.Size = new System.Drawing.Size(90, 15);
+            this.Sensors.TabIndex = 13;
+            this.Sensors.Text = "SensorsPosition";
+            // 
+            // labelMotors
+            // 
+            this.labelMotors.AutoSize = true;
+            this.labelMotors.Location = new System.Drawing.Point(437, 58);
+            this.labelMotors.Name = "labelMotors";
+            this.labelMotors.Size = new System.Drawing.Size(82, 15);
+            this.labelMotors.TabIndex = 15;
+            this.labelMotors.Text = "Motors speed:";
+            // 
+            // motorsInfo
+            // 
+            this.motorsInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.motorsInfo.AutoSize = true;
+            this.motorsInfo.Location = new System.Drawing.Point(518, 58);
+            this.motorsInfo.Name = "motorsInfo";
+            this.motorsInfo.Size = new System.Drawing.Size(47, 15);
+            this.motorsInfo.TabIndex = 14;
+            this.motorsInfo.Text = "Sensors";
+            // 
+            // PictureBoxSimulationFrame
+            // 
+            this.PictureBoxSimulationFrame.Location = new System.Drawing.Point(12, 13);
+            this.PictureBoxSimulationFrame.Name = "PictureBoxSimulationFrame";
+            this.PictureBoxSimulationFrame.Size = new System.Drawing.Size(419, 556);
+            this.PictureBoxSimulationFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBoxSimulationFrame.TabIndex = 16;
+            this.PictureBoxSimulationFrame.TabStop = false;
+            // 
+            // SensorsOnly
+            // 
+            this.SensorsOnly.Location = new System.Drawing.Point(448, 574);
+            this.SensorsOnly.Name = "SensorsOnly";
+            this.SensorsOnly.Size = new System.Drawing.Size(85, 44);
+            this.SensorsOnly.TabIndex = 17;
+            this.SensorsOnly.Text = "Toggle Sensors only";
+            this.SensorsOnly.UseVisualStyleBackColor = true;
+            this.SensorsOnly.Click += new System.EventHandler(this.SensorsOnly_Click);
             // 
             // SimulationResultViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 631);
+            this.Controls.Add(this.SensorsOnly);
+            this.Controls.Add(this.PictureBoxSimulationFrame);
+            this.Controls.Add(this.labelMotors);
+            this.Controls.Add(this.motorsInfo);
+            this.Controls.Add(this.Sensors);
+            this.Controls.Add(this.PictureBoxSensorsCoords);
             this.Controls.Add(this.LabelSensrs);
             this.Controls.Add(this.LabelSensors);
             this.Controls.Add(this.LabelDir);
@@ -199,6 +269,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Slider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRobot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSensorsCoords)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSimulationFrame)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +291,11 @@
         private PictureBox PictureBoxRobot;
         private Label LabelSensrs;
         private Label LabelSensors;
+        private PictureBox PictureBoxSensorsCoords;
+        private Label Sensors;
+        private Label labelMotors;
+        private Label motorsInfo;
+        private PictureBox PictureBoxSimulationFrame;
+        private Button SensorsOnly;
     }
 }
