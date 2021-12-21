@@ -8,6 +8,7 @@ namespace PFRS
 {
     public partial class FormMain : Form
 	{
+		ScriptAnalyzer scriptAnalyzer = new();
 		/// <summary>
 		/// Boolean representing whether settings window is open
 		/// </summary>
@@ -318,7 +319,6 @@ namespace PFRS
 
 		private void ButtonRunSingleScript_Click(object sender, EventArgs e)
 		{
-			ScriptAnalyzer scriptAnalyzer = new();
 			List<Simulator.SimulationFrame> simulationResult;
 			var result = scriptAnalyzer.CompileScript(GetScript(SelectedScript).WorkingContents);
 			if (result is Exception ex)
