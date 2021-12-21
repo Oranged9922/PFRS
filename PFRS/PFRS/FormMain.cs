@@ -168,6 +168,7 @@ namespace PFRS
 			SelectedTrack = f.SelectedTrack;
 			SelectedRobot = f.SelectedRobot;
 			TrackPictureBox.Image = Tracks[SelectedTrack];
+			SimTime = f.SimTime;
         }
 
 		/// <summary>
