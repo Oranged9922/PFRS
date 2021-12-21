@@ -67,9 +67,25 @@ public struct Matrix3
     =>
          new Vector2
             (
-                M11 * v.X + M12 * v.Y + M13,
-                M21 * v.X + M22 * v.Y + M23
+                M11 * v.X + M12 * v.Y,
+                M21 * v.X + M22 * v.Y
             );
+
+    public Matrix3 Rotate(double angle)
+        =>
+           new(
+                   M11: (float)Math.Cos(angle),
+                   M12: -(float)Math.Sin(angle),
+                   M13: 0,
+
+                   M21: (float)Math.Sin(angle),
+                   M22: (float)Math.Cos(angle),
+                   M23: 0,
+
+                   M31: 0,
+                   M32: 0,
+                   M33: 1
+               );
 
     public float M12;
     public float M13;
@@ -111,9 +127,11 @@ public static class Extensions
                    M11: (float)Math.Cos(angle),
                    M12: -(float)Math.Sin(angle),
                    M13: (float)(vec.X),
+
                    M21: (float)Math.Sin(angle),
                    M22: -(float)Math.Cos(angle),
                    M23: (float)(vec.Y),
+
                    M31: 0,
                    M32: 0,
                    M33: 1
