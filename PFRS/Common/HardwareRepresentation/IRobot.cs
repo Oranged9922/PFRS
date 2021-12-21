@@ -7,6 +7,10 @@ public interface IRobot
     public RobotCoordinates RobotCoordinates { get; set; }
     float[,] Track { get; set; }
     Vector2 BitmapSize { get; set; }
+    int[] MotorsSpeed { get; set; }
+    Vector2 BitmapSizeCenter { get; set; }
+
+    Vector2[] SensorsCoordinates { get; set; }
 
     void Update(int fps);
 }
