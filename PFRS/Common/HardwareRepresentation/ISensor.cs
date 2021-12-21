@@ -1,4 +1,6 @@
-﻿namespace Common.HardwareRepresentation
+﻿using Utils.Vector;
+
+namespace Common.HardwareRepresentation
 {
     public interface ISensor
     {
