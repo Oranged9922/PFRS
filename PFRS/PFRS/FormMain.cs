@@ -374,7 +374,7 @@ namespace PFRS
 			var robot = robotCtor.Invoke();
 			robot.Track = TracksAsArray[SelectedTrack];
 			robot.RobotCoordinates = new() {
-				Position = new(image.Width / 2, image.Height / 2),
+				Position = InitialPosition,
 				RotationAngle = this.RotationAngle
 			};
 			robot.BitmapSize = new(image.Width,image.Height);
