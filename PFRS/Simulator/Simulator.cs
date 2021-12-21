@@ -22,7 +22,7 @@ namespace Simulator
                 loopDelegate.Invoke(robot.RobotInfo);
                 // robot.RobotInfo is changed
                 robot.Update(fps);
-                frames.Add(new SimulationFrame(robot, i+1));
+                frames.Add(new SimulationFrame(robot, i));
             }
             return frames;
         }
