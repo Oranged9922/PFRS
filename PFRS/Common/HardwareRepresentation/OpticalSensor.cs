@@ -5,9 +5,11 @@ namespace Common.HardwareRepresentation
     {
         public IRobot MountedOn;
         public Vector2 UVCoords; // x,y pixels in the png image of the robot
+        public Vector2 CurrentPosition;
 
         public float GetReading()
         {
+
             CalculateCurrentPosition(out Vector2 curPos);
             var track = MountedOn.Track;
             
@@ -26,24 +28,22 @@ namespace Common.HardwareRepresentation
             // the origin based on current position of robot and its direction
 
             // this is top left corner of robot
-            var robotPosition = MountedOn.RobotCoordinates.Position;
+            //var robotPosition = MountedOn.RobotCoordinates.Position;
             // angle of the robot
             var angle = MountedOn.RobotCoordinates.RotationAngle;
 
             // vector of absolute position
-            var vec = new Vector2(
-                (float)(UVCoords.X + MountedOn.RobotCoordinates.Position.X),
-                (float)(UVCoords.Y + MountedOn.RobotCoordinates.Position.Y)
-               );
-
             // from that we can create 3D homogeneous rotation/translation matrix as
-            var mat = Matrix3.Identity.RotateAndTranslate(angle, vec);
+            var mat = Matrix3.Identity.Rotate(angle*(Math.PI/180));
 
             // now translate the vector by the matrix
 
-            
+
+           
             curPos = mat.ApplyTrasform(UVCoords);
-        
+            
+            curPos += MountedOn.RobotCoordinates.Position;
+            CurrentPosition = curPos;
         }
     }
 }
