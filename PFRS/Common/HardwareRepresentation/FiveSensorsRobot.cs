@@ -13,30 +13,43 @@ namespace Common.HardwareRepresentation
 
 
         public override IRobotInfo RobotInfo { get; }
-
+        public override Vector2[] SensorsCoordinates { get; set; }
+        public override Vector2 BitmapSizeCenter { get; set; }
+        public override int[] MotorsSpeed { get; set; }
 
         public FiveSensorsRobot(Vector2 UV = new(), double initPosX = 0, double initPosY = 0, double initialAngle = 0)
         {
-            this.RobotCoordinates = new() { Position = new(initPosX, initPosY), RotationAngle = initialAngle};
-            
+            this.RobotCoordinates = new() { Position = new(initPosX, initPosY), RotationAngle = initialAngle };
+            this.BitmapSizeCenter = new() { X = 51, Y = 49 };
+            this.MotorsSpeed = new int[] { 0, 0 };
+            // 51,49
+
             RobotInfo = new RobotInfo()
             {
                 Sensors = new()
                 {
-                    new OpticalSensor() { MountedOn = this, UVCoords = new(2  , 95) }, //most right
-                    new OpticalSensor() { MountedOn = this, UVCoords = new(37 , 95) }, // right
-                    new OpticalSensor() { MountedOn = this, UVCoords = new(52 , 95) }, // center
-                    new OpticalSensor() { MountedOn = this, UVCoords = new(67 , 95) }, // left
-                    new OpticalSensor() { MountedOn = this, UVCoords = new(102, 95) }  // most left
+                    new OpticalSensor() { MountedOn = this, UVCoords = new(-50, 100) }, //most right
+                    new OpticalSensor() { MountedOn = this, UVCoords = new(-15, 100) }, // right
+                    new OpticalSensor() { MountedOn = this, UVCoords = new(0, 100) }, // center
+                    new OpticalSensor() { MountedOn = this, UVCoords = new(15, 100) }, // left
+                    new OpticalSensor() { MountedOn = this, UVCoords = new(50, 100) }  // most left
                 },
                 Motors = new()
                 {
-                    new Motor() { MountedOn = this, relPosFromRobotCenter = new(0, 25) }, // left wheel
-                    new Motor() { MountedOn = this, relPosFromRobotCenter = new(105, 25) }  // right wheel
+                    new Motor() { MountedOn = this, relPosFromRobotCenter = new(-50, 0) }, // left wheel
+                    new Motor() { MountedOn = this, relPosFromRobotCenter = new(50, 0) }  // right wheel
                 },
             };
-        }
 
+            this.SensorsCoordinates = new Vector2[]
+            {
+                new(-50, 100), //most right
+                new(-15, 100), // right
+                new(0, 100), // center
+                new(15, 100), // left
+                new(50, 100)  // most left
+            };
+        }
       
 
         public override void Update(int fps)
