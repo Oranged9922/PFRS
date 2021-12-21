@@ -4,7 +4,7 @@ public class Script
     public bool Saved { get => this.Contents == this.WorkingContents; }
     public string Contents;
     public int ID { get; set; }
-    public object Name { get; set; }
+    public string Name { get; set; }
     public string WorkingContents { get; set; }
 
     public string Path;
