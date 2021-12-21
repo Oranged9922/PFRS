@@ -63,17 +63,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TrackPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 15</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TrackPictureBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>8, 7</value>
   </data>
   <data name="TrackPictureBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>836, 0</value>
+    <value>450, 0</value>
   </data>
   <data name="TrackPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>836, 1099</value>
+    <value>450, 515</value>
   </data>
   <data name="TrackPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -104,13 +100,10 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="ButtonSimulationSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>962, 1058</value>
-  </data>
-  <data name="ButtonSimulationSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>518, 491</value>
   </data>
   <data name="ButtonSimulationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 42</value>
+    <value>59, 25</value>
   </data>
   <data name="ButtonSimulationSettings.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -131,13 +124,10 @@
     <value>7</value>
   </data>
   <data name="ButtonLoadScript.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1086, 17</value>
-  </data>
-  <data name="ButtonLoadScript.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>585, 8</value>
   </data>
   <data name="ButtonLoadScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 53</value>
+    <value>81, 25</value>
   </data>
   <data name="ButtonLoadScript.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -158,13 +148,10 @@
     <value>6</value>
   </data>
   <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1086, 83</value>
-  </data>
-  <data name="TextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>585, 39</value>
   </data>
   <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>715, 1017</value>
+    <value>387, 479</value>
   </data>
   <data name="TextBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -185,13 +172,10 @@
     <value>5</value>
   </data>
   <data name="ButtonSaveScript.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1248, 17</value>
-  </data>
-  <data name="ButtonSaveScript.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>672, 8</value>
   </data>
   <data name="ButtonSaveScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 53</value>
+    <value>75, 25</value>
   </data>
   <data name="ButtonSaveScript.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -212,16 +196,13 @@
     <value>4</value>
   </data>
   <data name="ListBoxScripts.ItemHeight" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>15</value>
   </data>
   <data name="ListBoxScripts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>869, 83</value>
-  </data>
-  <data name="ListBoxScripts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>468, 39</value>
   </data>
   <data name="ListBoxScripts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 580</value>
+    <value>111, 274</value>
   </data>
   <data name="ListBoxScripts.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -239,13 +220,10 @@
     <value>3</value>
   </data>
   <data name="ButtonRemoveScript.Location" type="System.Drawing.Point, System.Drawing">
-    <value>869, 17</value>
-  </data>
-  <data name="ButtonRemoveScript.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>468, 8</value>
   </data>
   <data name="ButtonRemoveScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 53</value>
+    <value>111, 25</value>
   </data>
   <data name="ButtonRemoveScript.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -266,13 +244,10 @@
     <value>2</value>
   </data>
   <data name="ButtonRunSingleScript.Location" type="System.Drawing.Point, System.Drawing">
-    <value>869, 681</value>
-  </data>
-  <data name="ButtonRunSingleScript.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>468, 319</value>
   </data>
   <data name="ButtonRunSingleScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 53</value>
+    <value>111, 25</value>
   </data>
   <data name="ButtonRunSingleScript.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -296,13 +271,10 @@
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>869, 747</value>
-  </data>
-  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>468, 350</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 53</value>
+    <value>111, 25</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -326,19 +298,16 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>13, 32</value>
+    <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1809, 1129</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>979, 544</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1835, 1200</value>
+    <value>995, 583</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1835, 1200</value>
+    <value>995, 583</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>PFRS</value>
