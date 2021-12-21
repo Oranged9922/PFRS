@@ -7,7 +7,7 @@ namespace Common.HardwareRepresentation
         /// . represents sensor in front
         ///       _________
         ///      |         |   
-        ///     o|         |o   (but rotated 270°)
+        ///     o|         |o   (but rotated)
         ///      l_________l    
         ///      .  . . .  . 
 
