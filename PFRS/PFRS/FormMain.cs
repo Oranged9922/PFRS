@@ -41,6 +41,7 @@ namespace PFRS
 		public int SimTime { get; internal set; } = 30;
 		public int FPS { get; internal set; } = 30;
 		public float RotationAngle = 0;
+		public Vector2 InitialPosition = Vector2.Zero;
         public string SelectedRobot { get; internal set; }
 
         public FormMain()
