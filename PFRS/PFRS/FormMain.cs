@@ -380,5 +380,16 @@ namespace PFRS
 			robot.BitmapSize = new(image.Width,image.Height);
 			return robot;
         }
+
+		// to do : make this multithreaded
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (var script in this.scripts)
+            {
+				InitializeNewSimResViewer(
+					CompileAndRunScript(
+						script.WorkingContents)).Show();
+            }
+        }
     }
 }
