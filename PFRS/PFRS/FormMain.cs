@@ -320,8 +320,24 @@ namespace PFRS
 
 		private void ButtonRunSingleScript_Click(object sender, EventArgs e)
 		{
-			List<Simulator.SimulationFrame> simulationResult;
-			var result = scriptAnalyzer.CompileScript(GetScript(SelectedScript).WorkingContents);
+				InitializeNewSimResViewer(
+					CompileAndRunScript(
+						GetScript(SelectedScript).WorkingContents)).Show();
+		}
+		private SimulationResultViewer InitializeNewSimResViewer(List<Simulator.SimulationFrame> simulationResult)
+        {
+
+			return new(
+					Tracks[SelectedTrack],
+					RobotsImages[SelectedRobot],
+					simulationResult,
+					WindowTitle: (scripts[SelectedScript].Name, SelectedTrack, SelectedRobot));
+		}
+
+		private List<Simulator.SimulationFrame> CompileAndRunScript(string scriptContnets)
+		{
+			List<Simulator.SimulationFrame> simulationResult = new();
+			var result = scriptAnalyzer.CompileScript(scriptContnets);
 			if (result is Exception ex)
 			{
 				MessageBox.Show(ex.Message, "An error occured", MessageBoxButtons.OK);
@@ -336,28 +352,21 @@ namespace PFRS
 					var setupDelegate = scriptAnalyzer.globals.formula.Setup;
 					simulationResult = Simulator.Simulator.Simulate
 						(
-							simulateFor:	SimTime,
-							fps:			FPS,
-							setupDelegate:	setupDelegate,
-							loopDelegate:	loopDelegate,
-							robot:			SetInitialValuesForRobot(Robot.GetRobotCtor(SelectedRobot))
+							simulateFor: SimTime,
+							fps: FPS,
+							setupDelegate: setupDelegate,
+							loopDelegate: loopDelegate,
+							robot: SetInitialValuesForRobot(Robot.GetRobotCtor(SelectedRobot))
 						);
 				}
 				catch (AggregateException ex2)
 				{
 					MessageBox.Show($"Error running script: {ex2.InnerException.Message}");
-					return;
+					return null;
 				}
-				//Debug.Write(String.Concat(simulationResult.Select
-				//	(x => $"{x.FrameNumber}:  Position = {x.RobotCoordinates.Position}, " +
-				//		  $"Direction = {x.RobotCoordinates.RotationAngle}").Select(x => x+"\n")));
-
-				SimulationResultViewer srv
-					= new(Tracks[SelectedTrack], RobotsImages[SelectedRobot], simulationResult);
-				srv.Show();
 			}
+			return simulationResult;
 		}
-
         private IRobot SetInitialValuesForRobot(Func<IRobot> robotCtor)
         {
 			var image = RobotsImages[SelectedRobot];
