@@ -8,6 +8,6 @@ namespace Common.HardwareRepresentation
         internal IRobot MountedOn;
         internal Vector2 relPosFromRobotCenter;
 
-        public int Speed { set => _speed = Utils.Utils.Clamp(value,0,100);}
+        public int Speed { set => _speed = Utils.Utils.Clamp(value,1400,1600);}
     }
 }

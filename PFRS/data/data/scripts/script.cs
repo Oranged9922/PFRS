@@ -7,9 +7,9 @@ Robot r = new Robot();
 // Called only once before simulating
 formula.Setup = (IRobotInfo robotInfo) =>
 {
-  //Motor.Speed = [0-100]
-    robotInfo.Motors[0].Speed = 50; // neutral
-    robotInfo.Motors[1].Speed = 50; // neutral
+  //Motor.Speed = [1400-1600]
+    robotInfo.Motors[0].Speed = 1500; // neutral
+    robotInfo.Motors[1].Speed = 1501; // neutral
 };
 
 // Is called every frame
@@ -25,8 +25,8 @@ formula.Loop = (IRobotInfo robotInfo) =>
 // You can also create your own types and classes
 class Robot
 {
-    public int currentSpeedMotor0 = 50;
-    public int currentSpeedMotor1 = 50;
+    public int currentSpeedMotor0 = 1500;
+    public int currentSpeedMotor1 = 1500;
     public Robot(){}
 }
 

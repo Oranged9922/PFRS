@@ -54,30 +54,36 @@ namespace Common.HardwareRepresentation
 
         public override void Update(int fps)
         {
-            // let assume that the speed of wheel is between 0 and 100 (max speed reverse = 0, not moving  = 50, max speed = 100)
+            // let assume that the speed of wheel is between 1400 and 1600 (max speed reverse = 14000, not moving  = 1500, max speed = 1600)
             // calculating position and heading (angle, direction) is quite simple when we know previous
             // data (which we have, they are not updated yet (position and direction)) and new speeds of wheels
-            // right hand system means that left wheen moves in direction of robot when 50<,
-            // and right wheel moves in direction of robot when 50>.
+            // right hand system means that left wheen moves in direction of robot when 1500<,
+            // and right wheel moves in direction of robot when 1500>.
 
-            double dTime = 10.0f / fps;
-            //left wheel traversed
-            double lWheel = (((Motor)RobotInfo.Motors[0])._speed-50) * dTime;
-            //right wheel traversed
-            double rWheel = (((Motor)RobotInfo.Motors[1])._speed-50) * dTime;
+            double dTime = fps/1000.0f;
+            //left wheel relative speed
+            double lWheel = (((Motor)RobotInfo.Motors[0])._speed - 1500);
+            //right wheel relative speed
+            double rWheel = (((Motor)RobotInfo.Motors[1])._speed - 1500);
 
             // from this we know distance between individual wheels
 
-            double angle = (rWheel - lWheel) / (((Motor)RobotInfo.Motors[0]).relPosFromRobotCenter.Length * 2);
-            var dY = (rWheel + lWheel) * Math.Sin(angle);
-            var dX = (rWheel + lWheel) * Math.Cos(angle);
+            var baseLength = (((Motor)RobotInfo.Motors[0]).relPosFromRobotCenter.Length * 2);
 
-            var cPos = this.RobotCoordinates.Position;
+            var s_n = (dTime * rWheel + dTime * lWheel) / 2;
+
+            var deltaTheta = (dTime * rWheel - dTime * lWheel) / baseLength;
+            var prevX = this.RobotCoordinates.Position.X;
+            var prevY = this.RobotCoordinates.Position.Y;
             var cAngle = this.RobotCoordinates.RotationAngle;
-            this.RobotCoordinates = new RobotCoordinates() 
-            { 
-                Position = new Vector2(cPos.X + dX, cPos.Y + dY), 
-                RotationAngle =  cAngle+angle
+            var newX = prevX + (s_n * (Math.Cos(deltaTheta + cAngle)));
+            var newY = prevY + (s_n * (Math.Sin(deltaTheta + cAngle)));
+
+
+            this.RobotCoordinates = new RobotCoordinates()
+            {
+                Position = new Vector2(newX, newY),
+                RotationAngle = cAngle + deltaTheta
             };
 
             MotorsSpeed[0] = ((Motor)RobotInfo.Motors[0])._speed;

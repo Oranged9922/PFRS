@@ -7,11 +7,11 @@ namespace Simulator
     {
 
         public static List<SimulationFrame> Simulate(
+            IRobot robot,
+            Formula.SetupDelegate setupDelegate,
+            Formula.LoopDelegate loopDelegate,
             int simulateFor = 5, 
-            int fps = 30, 
-            Formula.SetupDelegate setupDelegate = null, 
-            Formula.LoopDelegate loopDelegate = null, 
-            IRobot robot = null)
+            int fps = 30)
         {
             List<SimulationFrame> frames = new();
             // run setup once
