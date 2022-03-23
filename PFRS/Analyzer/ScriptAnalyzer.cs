@@ -27,7 +27,6 @@ public class ScriptAnalyzer
         {
             formula = new Formula(),
         };
-        
     }
 
     public object CompileScript(string sourceCode)
@@ -38,6 +37,7 @@ public class ScriptAnalyzer
                 globals: globals,
                 options: ScriptOptions.Default.WithReferences(assemblies).AddImports(imports));
             }
+
         catch(Exception e)
         {
             return e;

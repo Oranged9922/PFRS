@@ -40,7 +40,7 @@ namespace PFRS
 		/// </summary>
 		public int SimTime { get; internal set; } = 30;
 		public int FPS { get; internal set; } = 30;
-		public float RotationAngle = 0;
+		public float RotationAngle = (float)Math.PI/2.0f;
 		public Vector2 InitialPosition = Vector2.Zero;
         public string SelectedRobot { get; internal set; }
 
@@ -347,7 +347,7 @@ namespace PFRS
 			{
 				try
 				{
-					Task.WaitAll((Task)result);
+				    //Task.WaitAll((Task)result);
 
 					var loopDelegate = scriptAnalyzer.globals.formula.Loop;
 					var setupDelegate = scriptAnalyzer.globals.formula.Setup;

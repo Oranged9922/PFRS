@@ -91,8 +91,13 @@ namespace PFRS
 
         private Image GenerateImage(int frame)
         {
-            Bitmap bmp = new(Track);
+            Bitmap bmp =    (PictureBoxSimulationFrame.Image != null) ?
+                                (Bitmap)PictureBoxSimulationFrame.Image :
+                                new(Track);
+            
             Graphics graphics = Graphics.FromImage(bmp);
+            graphics.Clear(Color.White);
+            graphics.DrawImage(Track,new Rectangle(0,0,bmp.Width,bmp.Height));
             if (sensorsOnly)
             {
                  Pen p = new Pen(Color.Red);

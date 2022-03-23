@@ -120,6 +120,8 @@ public static class Extensions
     public static Vector2 AsInt(this Vector2 orig) =>
         new Vector2((int)orig.X, (int)orig.Y);
 
+    public static double Angle(this Vector2 a, Vector2 b) => Math.Acos(Vector2.DotProduct(a, b) / (a.Length * b.Length));
+
 
     public static Matrix3 RotateAndTranslate(this Matrix3 m, double angle, Vector2 vec)
    =>

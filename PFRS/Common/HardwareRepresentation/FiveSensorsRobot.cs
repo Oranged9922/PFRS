@@ -60,11 +60,11 @@ namespace Common.HardwareRepresentation
             // right hand system means that left wheen moves in direction of robot when 1500<,
             // and right wheel moves in direction of robot when 1500>.
 
-            double dTime = fps/1000.0f;
+            double dTime = 1.0f/fps;
             //left wheel relative speed
             double lWheel = (((Motor)RobotInfo.Motors[0])._speed - 1500);
             //right wheel relative speed
-            double rWheel = (((Motor)RobotInfo.Motors[1])._speed - 1500);
+            double rWheel = -(((Motor)RobotInfo.Motors[1])._speed - 1500);
 
             // from this we know distance between individual wheels
 
@@ -79,11 +79,13 @@ namespace Common.HardwareRepresentation
             var newX = prevX + (s_n * (Math.Cos(deltaTheta + cAngle)));
             var newY = prevY + (s_n * (Math.Sin(deltaTheta + cAngle)));
 
-
+            var newPos = new Vector2(newX, newY);
+            var oldPos = this.RobotCoordinates.Position;
+            var newRotAngle = (newPos - oldPos).Angle(new Vector2(0,1));
             this.RobotCoordinates = new RobotCoordinates()
             {
-                Position = new Vector2(newX, newY),
-                RotationAngle = cAngle + deltaTheta
+                Position = newPos,
+                RotationAngle = newRotAngle
             };
 
             MotorsSpeed[0] = ((Motor)RobotInfo.Motors[0])._speed;
