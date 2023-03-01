@@ -30,6 +30,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tracks", "tracks", "{C32717
 		data\data\tracks\track4.png = data\data\tracks\track4.png
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFRS.Api", "PFRS.API\PFRS.Api.csproj", "{D9AC2CC4-3969-4354-9130-1F5006D7A270}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFRS.Domain", "PFRS.Domain\PFRS.Domain.csproj", "{15F5A191-8C59-488C-859A-B5484476D038}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFRS.Application", "PFRS.Application\PFRS.Application.csproj", "{37FAA715-C49F-4398-AAC9-4CF722C929F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFRS.Infrastructure", "PFRS.Infrastructure\PFRS.Infrastructure.csproj", "{70FDC6F0-E46B-4312-8865-1D7EFE890DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFRS.UI", "PFRS.UI\PFRS.UI.csproj", "{A35A9A03-0FFF-48BB-8A1A-A1EDA23106BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +66,26 @@ Global
 		{9CB4F1C1-61C9-49A0-AEAE-787A42731D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CB4F1C1-61C9-49A0-AEAE-787A42731D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CB4F1C1-61C9-49A0-AEAE-787A42731D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9AC2CC4-3969-4354-9130-1F5006D7A270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9AC2CC4-3969-4354-9130-1F5006D7A270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9AC2CC4-3969-4354-9130-1F5006D7A270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9AC2CC4-3969-4354-9130-1F5006D7A270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F5A191-8C59-488C-859A-B5484476D038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F5A191-8C59-488C-859A-B5484476D038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F5A191-8C59-488C-859A-B5484476D038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F5A191-8C59-488C-859A-B5484476D038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37FAA715-C49F-4398-AAC9-4CF722C929F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37FAA715-C49F-4398-AAC9-4CF722C929F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37FAA715-C49F-4398-AAC9-4CF722C929F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37FAA715-C49F-4398-AAC9-4CF722C929F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70FDC6F0-E46B-4312-8865-1D7EFE890DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70FDC6F0-E46B-4312-8865-1D7EFE890DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70FDC6F0-E46B-4312-8865-1D7EFE890DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70FDC6F0-E46B-4312-8865-1D7EFE890DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35A9A03-0FFF-48BB-8A1A-A1EDA23106BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35A9A03-0FFF-48BB-8A1A-A1EDA23106BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35A9A03-0FFF-48BB-8A1A-A1EDA23106BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35A9A03-0FFF-48BB-8A1A-A1EDA23106BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
