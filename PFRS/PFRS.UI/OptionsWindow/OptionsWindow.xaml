@@ -6,7 +6,33 @@
         xmlns:local="clr-namespace:PFRS.UI"
         mc:Ignorable="d"
         Title="OptionsWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <StackPanel 
+      Orientation="Horizontal" 
+      Margin="0,20,0,0"
+      Grid.Row="0"
+      Grid.Column="1">
+    <Label Content="Map:"/>
+      <ComboBox x:Name="MapOptionsComboBox"
+              Width="200"/>
+    </StackPanel>
+    <!--Save button-->
+    <StackPanel
+      Orientation="Horizontal"
+      HorizontalAlignment="Right"
+      Grid.Row="2">
+      <Button
+        Content="Save Options"
+        Margin="0,50,20,20" Click="SaveOptions_ButtonClick">
+      </Button>
+    </StackPanel>
+    <!-- Other controls and content for the window -->
+
+  </Grid>
 </Window>

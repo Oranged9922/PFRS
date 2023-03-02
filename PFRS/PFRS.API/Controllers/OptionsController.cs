@@ -17,10 +17,5 @@
 		{
 			return facade.GetOptions();
 		}
-
-		public ErrorOr<bool> SetOptions(OptionsModel options)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }

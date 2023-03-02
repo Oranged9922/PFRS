@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PFRS.Application\PFRS.Application.csproj" />
-    <ProjectReference Include="..\PFRS.Domain\PFRS.Domain.csproj" />
   </ItemGroup>
 
 </Project>

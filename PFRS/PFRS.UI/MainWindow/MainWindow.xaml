@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PFRS.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" MinHeight="450" MinWidth="800">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="20px" />
@@ -28,8 +28,9 @@
     </ListBox>
 
     <!-- Path and Robot Image -->
-    <Image Grid.Row="1" Grid.Column="1">
+    <Image Grid.Row="1" Grid.Column="1" Name="PathImageControl">
       <!-- add your image source here -->
+      
     </Image>
 
     <!-- Script Editor -->

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PFRS.API\PFRS.Api.csproj" />
+    <ProjectReference Include="..\PFRS.Infrastructure\PFRS.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

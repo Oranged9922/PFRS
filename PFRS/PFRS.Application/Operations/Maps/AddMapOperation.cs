@@ -1,20 +1,18 @@
 ﻿namespace PFRS.Application.Operations.Maps
 {
 	using PFRS.Application.Interfaces;
-	using PFRS.Domain;
 
-	public sealed class GetMapByIdOperation
+	public sealed class AddMapOperation
 	{
 		private readonly IMapsRepository mapsRepository;
-
-		public GetMapByIdOperation(IMapsRepository mapsRepository)
+		public AddMapOperation(IMapsRepository mapsRepository)
 		{
 			this.mapsRepository = mapsRepository;
 		}
 
-		public MapModel? Execute(int id)
+		public int Execute(string relpath)
 		{
-			return mapsRepository.GetMapById(id);
+			return mapsRepository.AddMap(relpath);
 		}
 	}
 }
