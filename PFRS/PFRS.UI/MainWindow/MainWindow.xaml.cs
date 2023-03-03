@@ -15,15 +15,19 @@
 	{
 		private readonly OptionsWindow optionsWindow;
 		private readonly MapsController mapsController;
+		private readonly RobotsController robotsController;
 
 		private MapModel map;
-
+		private RobotModel robot;
 		public MainWindow(
 			OptionsWindow optionsWindow,
-			MapsController mapsController)
+			MapsController mapsController,
+			RobotsController robotsController)
 		{
 			this.optionsWindow = optionsWindow;
 			this.mapsController = mapsController;
+			this.robotsController = robotsController;
+
 			InitializeComponent();
 
 			this.optionsWindow.Closing += OptionsWindow_Closing;
@@ -34,7 +38,28 @@
 		private void InitializeDefault()
 		{
 			optionsWindow.SetSelectedMapId(0);
+			optionsWindow.SetSelectedRobotId(0);
 			SetMap();
+			SetRobot();
+		}
+
+		private void SetRobot()
+		{
+			robotsController.GetRobotById(optionsWindow.SelectedRobot).SwitchFirst(
+				robot => this.robot = robot,
+				error =>
+				MessageBox.Show($"{error.Description}\n" +
+							   $"EntityType: {typeof(RobotModel)}\n" +
+							   $"Id: {optionsWindow.SelectedRobot}",
+							   caption: error.Type.ToString()));
+			if (robot is not null)
+			{
+				this.RobotImageControl.Source = new BitmapImage(
+					new Uri(robot.ImagePath));
+				this.RobotImageControl.Height = robot.Height;
+				this.RobotImageControl.Width = robot.Width;
+
+			}
 		}
 
 		private void SetMap()
@@ -49,7 +74,9 @@
 			if (map is not null)
 			{
 				this.PathImageControl.Source = new BitmapImage(
-					new Uri(Environment.CurrentDirectory + "../" + map.Path));
+					new Uri(map.Path));
+				this.PathImageControl.Height = map.Height;
+				this.PathImageControl.Width = map.Width;
 			}
 		}
 

@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PFRS.UI"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="450" MinWidth="800">
+        Title="MainWindow" 
+        MinHeight="650" MinWidth="800"
+        Height="650" Width="1000">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="20px" />
-      <RowDefinition Height="*" />
+      <RowDefinition Height="600px" />
       <RowDefinition Height="20px" />
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="15*" MinWidth="100px" MaxWidth="150px"/>
-      <ColumnDefinition Width="45*" />
-      <ColumnDefinition Width="40*" MinWidth="250px"/>
+      <ColumnDefinition Width="150px"/>
+      <ColumnDefinition Width="400px" />
+      <ColumnDefinition Width="*" MinWidth="250px"/>
     </Grid.ColumnDefinitions>
 
     <!-- Options Button -->
@@ -28,11 +30,8 @@
     </ListBox>
 
     <!-- Path and Robot Image -->
-    <Image Grid.Row="1" Grid.Column="1" Name="PathImageControl">
-      <!-- add your image source here -->
-      
-    </Image>
-
+      <Image Name="PathImageControl" Grid.Row="1" Grid.Column="1"/>
+      <Image Name="RobotImageControl" Grid.Row="1" Grid.Column="1"/>
     <!-- Script Editor -->
     <TextBox Grid.Row="1" Grid.Column="2">
       <!-- add your script text here -->

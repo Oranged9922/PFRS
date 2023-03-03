@@ -1,6 +1,7 @@
 ﻿namespace PFRS.Infrastructure
 {
 	using System.Collections.Generic;
+	using System.Drawing;
 
 	using PFRS.Application.Interfaces;
 	using PFRS.Domain;
@@ -9,19 +10,30 @@
 	{
 		List<MapModel> mapModels = new();
 
-		public int AddMap(string relpath)
+		public int AddMap(string filepath)
 		{
-			if (File.Exists(relpath) is false)
+			if (File.Exists(filepath) is false)
 			{
 				return -1;
 			}
-
-			mapModels.Add(new MapModel()
+			try
 			{
-				Id = mapModels.Count,
-				Path = relpath,
-				Name = Path.GetFileName(relpath).Split('.')[0]
-			});
+				var image = new Bitmap(filepath);
+				mapModels.Add(new MapModel()
+				{
+					Id = mapModels.Count,
+					Width = image.Width,
+					Height = image.Height,
+					Path = filepath,
+					Name = Path.GetFileName(filepath).Split('.')[0]
+				});
+
+			}
+
+			catch
+			{
+				return -1;
+			}
 			return mapModels.Count - 1;
 		}
 

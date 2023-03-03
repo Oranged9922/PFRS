@@ -5,23 +5,23 @@
 	using PFRS.Application.Facades;
 	using PFRS.Domain;
 
-	public sealed class MapsController : ApiController
+	public sealed class RobotsController : ApiController
 	{
-		private readonly MapsFacade facade;
+		private readonly RobotsFacade facade;
 
-		public MapsController(MapsFacade facade)
+		public RobotsController(RobotsFacade robotsFacade)
 		{
-			this.facade = facade;
+			this.facade = robotsFacade;
 		}
 
 		/// <summary>
 		/// Adds Map to repository. Returns error if error occured or id of added map.
 		/// </summary>
-		/// <param name="dirpath"></param>
+		/// <param name="relpath"></param>
 		/// <returns></returns>
-		public ErrorOr<int> AddMap(string dirpath)
+		public ErrorOr<int> AddRobot(string dirpath)
 		{
-			return facade.AddMap(dirpath);
+			return facade.AddRobot(dirpath);
 		}
 
 		/// <summary>
@@ -29,9 +29,9 @@
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public ErrorOr<MapModel> GetMapById(int id)
+		public ErrorOr<RobotModel> GetRobotById(int id)
 		{
-			return facade.GetMapById(id);
+			return facade.GetRobotById(id);
 		}
 	}
 }

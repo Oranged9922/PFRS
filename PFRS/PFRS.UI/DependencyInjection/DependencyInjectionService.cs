@@ -7,6 +7,7 @@
 	using PFRS.Application.Interfaces;
 	using PFRS.Application.Operations.Maps;
 	using PFRS.Application.Operations.Options;
+	using PFRS.Application.Operations.Robots;
 	using PFRS.Infrastructure;
 
 	public static class DependencyInjectionService
@@ -21,14 +22,16 @@
 			// Controllers
 			services.AddScoped<OptionsController>();
 			services.AddScoped<MapsController>();
+			services.AddScoped<RobotsController>();
 
 			// Facades
 			services.AddScoped<OptionsFacade>();
 			services.AddScoped<MapsFacade>();
+			services.AddScoped<RobotsFacade>();
 
 			// Repositories
 			services.AddSingleton<IMapsRepository, MapsRepository>();
-
+			services.AddSingleton<IRobotsRepository, RobotsRepository>();
 			// Operations
 			// Options
 			services.AddScoped<GetOptionsOperation>();
@@ -36,6 +39,11 @@
 			// Maps
 			services.AddScoped<GetMapByIdOperation>();
 			services.AddScoped<AddMapOperation>();
+
+			// Robots
+			services.AddScoped<GetRobotByIdOperation>();
+			services.AddScoped<AddRobotOperation>();
+
 			return services.BuildServiceProvider();
 		}
 	}

@@ -6,7 +6,7 @@
 
 	public interface IMapsRepository
 	{
-		int AddMap(string relpath);
+		int AddMap(string filepath);
 		public MapModel? GetMapById(int id);
 		IEnumerable<MapModel> GetMaps();
 	}

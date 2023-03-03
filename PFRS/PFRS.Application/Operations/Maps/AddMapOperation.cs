@@ -10,9 +10,9 @@
 			this.mapsRepository = mapsRepository;
 		}
 
-		public int Execute(string relpath)
+		public int Execute(string filepath)
 		{
-			return mapsRepository.AddMap(relpath);
+			return mapsRepository.AddMap(filepath);
 		}
 	}
 }

@@ -13,6 +13,7 @@
 		{
 			this.facade = facade;
 		}
+
 		public ErrorOr<OptionsModel> GetOptions()
 		{
 			return facade.GetOptions();

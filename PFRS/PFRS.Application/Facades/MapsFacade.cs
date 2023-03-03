@@ -1,7 +1,5 @@
 ﻿namespace PFRS.Application.Facades
 {
-	using System.Diagnostics.CodeAnalysis;
-
 	using ErrorOr;
 
 	using PFRS.Application.Operations.Maps;
@@ -22,9 +20,9 @@
 			this.addMapOperation = addMapOperation;
 		}
 
-		public ErrorOr<int> AddMap(string relpath)
+		public ErrorOr<int> AddMap(string filepath)
 		{
-			var result = addMapOperation.Execute(relpath);
+			var result = addMapOperation.Execute(filepath);
 			return result is -1 ? result : Errors.DbInsertError;
 		}
 
